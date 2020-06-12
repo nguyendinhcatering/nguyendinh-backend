@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_addon_addons",
+  "info": {
+    "name": "addon",
+    "icon": "angle-double-down"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "contactUsForm"
+      ]
+    }
+  }
+}

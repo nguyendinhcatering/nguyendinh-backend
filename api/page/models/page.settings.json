@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "name": "page"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "metadata": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.metadata",
+      "required": true
+    },
+    "sections": {
+      "type": "dynamiczone",
+      "components": [
+        "section.text-image-section",
+        "section.section-break"
+      ]
+    },
+    "banners": {
+      "collection": "banner"
+    },
+    "title": {
+      "type": "string",
+      "private": true
+    }
+  }
+}

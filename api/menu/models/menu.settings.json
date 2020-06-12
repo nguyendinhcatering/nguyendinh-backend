@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menus",
+  "info": {
+    "name": "menu"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "url": {
+      "type": "string"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "name": {
+      "type": "string"
+    },
+    "isHidden": {
+      "type": "boolean",
+      "default": false
+    },
+    "childMenus": {
+      "collection": "menu"
+    },
+    "isTopLevel": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "kind": "collectionType",
+  "collectionName": "banners",
+  "info": {
+    "name": "banner"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "text": {
+      "type": "richtext"
+    },
+    "media": {
+      "type": "component",
+      "repeatable": false,
+      "component": "multimedia.multimedia"
+    },
+    "location": {
+      "type": "enumeration",
+      "enum": [
+        "hero"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "center",
+        "card",
+        "video"
+      ]
+    },
+    "textStyle": {
+      "type": "enumeration",
+      "enum": [
+        "normal",
+        "styled"
+      ],
+      "default": "normal"
+    },
+    "headerColor": {
+      "type": "enumeration",
+      "enum": [
+        "black",
+        "white",
+        "primary"
+      ],
+      "default": "black"
+    },
+    "headerStyle": {
+      "type": "enumeration",
+      "enum": [
+        "styled",
+        "normal"
+      ],
+      "default": "normal"
+    },
+    "textColor": {
+      "type": "enumeration",
+      "enum": [
+        "black",
+        "white",
+        "primary"
+      ],
+      "default": "black"
+    }
+  }
+}

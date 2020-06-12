@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_multimedia_multimedias",
+  "info": {
+    "name": "multimedia",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "embeddedMedia": {
+      "type": "string"
+    }
+  }
+}

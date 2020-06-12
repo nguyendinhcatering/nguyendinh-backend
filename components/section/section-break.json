@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_section_section_breaks",
+  "info": {
+    "name": "SectionBreak",
+    "icon": "align-center"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "string",
+      "default": "SECTION_BREAK"
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/playground",
+      "handler": "playground.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/playground",
+      "handler": "playground.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/playground",
+      "handler": "playground.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

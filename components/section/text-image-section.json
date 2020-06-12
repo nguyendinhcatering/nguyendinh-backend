@@ -1,0 +1,66 @@
+{
+  "collectionName": "components_section_text_image_sections",
+  "info": {
+    "name": "Section",
+    "icon": "align-justify"
+  },
+  "options": {},
+  "attributes": {
+    "media": {
+      "type": "component",
+      "repeatable": true,
+      "component": "multimedia.multimedia"
+    },
+    "text": {
+      "type": "richtext"
+    },
+    "type": {
+      "type": "string",
+      "default": "SECTION"
+    },
+    "mediaPlacement": {
+      "type": "enumeration",
+      "enum": [
+        "none",
+        "top",
+        "left",
+        "right",
+        "background",
+        "mediaOnly",
+        "gallery"
+      ],
+      "default": "left"
+    },
+    "offsetMedia": {
+      "type": "boolean",
+      "default": false
+    },
+    "isFullWidth": {
+      "type": "boolean",
+      "default": true
+    },
+    "addons": {
+      "type": "component",
+      "repeatable": true,
+      "component": "addon.addon"
+    },
+    "headerColor": {
+      "type": "enumeration",
+      "enum": [
+        "black",
+        "white",
+        "primary"
+      ],
+      "default": "black"
+    },
+    "textColor": {
+      "type": "enumeration",
+      "enum": [
+        "black",
+        "white",
+        "primary"
+      ],
+      "default": "black"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "name": "backend-stable",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@editorjs/checklist": "^1.1.0",
+    "@editorjs/delimiter": "^1.1.0",
+    "@editorjs/editorjs": "^2.18.0",
+    "@editorjs/embed": "^2.3.1",
+    "@editorjs/header": "file:../header",
+    "@editorjs/image": "^2.4.1",
+    "@editorjs/link": "^2.2.0",
+    "@editorjs/list": "^1.4.0",
+    "@editorjs/marker": "^1.2.2",
+    "@editorjs/paragraph": "file:../paragraph",
+    "@editorjs/quote": "^2.3.0",
+    "@editorjs/table": "^1.2.2",
+    "@natterstefan/react-editor-js": "^0.3.1",
+    "knex": "<0.20.0",
+    "pg": "latest",
+    "strapi": "3.0.1",
+    "strapi-admin": "3.0.1",
+    "strapi-connector-bookshelf": "3.0.1",
+    "strapi-plugin-content-manager": "3.0.1",
+    "strapi-plugin-content-type-builder": "3.0.1",
+    "strapi-plugin-email": "3.0.1",
+    "strapi-plugin-upload": "3.0.1",
+    "strapi-plugin-users-permissions": "3.0.1",
+    "strapi-utils": "3.0.1"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "df7ee1bd-8e9b-49bb-a11e-8389d840bc45"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}
