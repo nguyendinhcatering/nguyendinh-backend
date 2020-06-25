@@ -9,8 +9,12 @@
     "type": {
       "type": "enumeration",
       "enum": [
-        "contactUsForm"
+        "contactUsForm",
+        "contactUsButton"
       ]
+    },
+    "data": {
+      "type": "json"
     }
   }
 }

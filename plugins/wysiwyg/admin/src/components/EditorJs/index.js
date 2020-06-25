@@ -16,7 +16,10 @@ import Checklist from "@editorjs/checklist";
 import Link from "@editorjs/link";
 import LinkButtonTool from "./plugins/link-button/bundle";
 import AccordionTool from "./plugins/accordion/bundle";
+import ColumnTool from "./plugins/column/bundle";
 import { isEqual } from "lodash";
+
+const { ColumnStart, ColumnEnd, ColumnSplit } = ColumnTool;
 
 const Wrapper = styled.div`
   .editorjs__main {
@@ -105,6 +108,9 @@ const Editor = ({ onChange, name, value, holder }) => {
               defaultLevel: 2,
             },
           },
+          columnStart: ColumnStart,
+          columnSplit: ColumnSplit,
+          columnEnd: ColumnEnd,
           paragraph: {
             class: Paragraph,
           },
