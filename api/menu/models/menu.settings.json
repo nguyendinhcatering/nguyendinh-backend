@@ -18,6 +18,10 @@
     "name": {
       "type": "string"
     },
+    "managementName": {
+      "type": "string",
+      "private": true
+    },
     "isHidden": {
       "type": "boolean",
       "default": false

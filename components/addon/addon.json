@@ -10,7 +10,8 @@
       "type": "enumeration",
       "enum": [
         "contactUsForm",
-        "contactUsButton"
+        "contactUsButton",
+        "downloadMenuButton"
       ]
     },
     "data": {
