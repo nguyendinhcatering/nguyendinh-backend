@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "food_menu_items",
+  "info": {
+    "name": "foodMenuItem"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "foodCategories": {
+      "collection": "food-category",
+      "via": "foodMenuItems",
+      "dominant": true
+    }
+  }
+}

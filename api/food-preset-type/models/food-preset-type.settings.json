@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "food_preset_types",
+  "info": {
+    "name": "foodPresetType"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "foodPresets": {
+      "collection": "food-preset",
+      "via": "foodPresetType"
+    },
+    "numberOfPeople": {
+      "type": "integer"
+    },
+    "media": {
+      "type": "component",
+      "repeatable": false,
+      "component": "multimedia.multimedia"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "isCustomizable": {
+      "type": "boolean"
+    }
+  }
+}

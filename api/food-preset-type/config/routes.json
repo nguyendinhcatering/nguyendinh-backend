@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/food-preset-types",
+      "handler": "food-preset-type.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/food-preset-types/count",
+      "handler": "food-preset-type.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/food-preset-types/:id",
+      "handler": "food-preset-type.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/food-preset-types",
+      "handler": "food-preset-type.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/food-preset-types/:id",
+      "handler": "food-preset-type.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/food-preset-types/:id",
+      "handler": "food-preset-type.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

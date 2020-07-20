@@ -11,17 +11,25 @@ module.exports = {
   contact: async (ctx) => {
     console.log(ctx.request.body);
 
-    return axios.post("/", {
-      template: "contact-us",
-      smtpOptions: {
-        to: "kevin.nguyen0125@gmail.com",
-      },
-      variables: {
-        email: ctx.request.body.email,
-        name: ctx.request.body.name,
-        message: ctx.request.body.message,
-        address: ctx.request.body.address,
-      },
-    });
+    try {
+      await axios.post("/", {
+        template: "contact-us",
+        smtpOptions: {
+          to: "kevin.nguyen0125@gmail.com",
+        },
+        variables: {
+          email: ctx.request.body.email,
+          name: ctx.request.body.name,
+          message: ctx.request.body.message,
+          address: ctx.request.body.address,
+        },
+      });
+
+      ctx.response.status = 200;
+      return "Successfully sent email";
+    } catch (err) {
+      ctx.response.status = 400;
+      return "Cannot send email";
+    }
   },
 };

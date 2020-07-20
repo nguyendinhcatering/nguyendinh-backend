@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "food_categories",
+  "info": {
+    "name": "foodCategory"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "orderInPreset": {
+      "type": "integer"
+    },
+    "orderInCustomizable": {
+      "type": "integer"
+    },
+    "foodMenuItems": {
+      "via": "foodCategories",
+      "collection": "food-menu-item"
+    }
+  }
+}
