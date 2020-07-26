@@ -21,6 +21,9 @@
     "foodMenuItems": {
       "via": "foodCategories",
       "collection": "food-menu-item"
+    },
+    "orderInBuffet": {
+      "type": "integer"
     }
   }
 }

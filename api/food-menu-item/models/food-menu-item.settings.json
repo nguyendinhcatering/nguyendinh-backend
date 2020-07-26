@@ -19,6 +19,18 @@
       "collection": "food-category",
       "via": "foodMenuItems",
       "dominant": true
+    },
+    "isSeasonal": {
+      "type": "boolean"
+    },
+    "allowInCustomizable": {
+      "type": "boolean"
+    },
+    "allowInBuffet": {
+      "type": "boolean"
+    },
+    "buffetPrice": {
+      "type": "integer"
     }
   }
 }

@@ -18,6 +18,19 @@ export default (strapi) => {
     isRequired: pluginPkg.strapi.required || false,
     leftMenuLinks: [],
     leftMenuSections: [],
+    // menu: {
+    //   pluginsSectionLinks: [
+    //     {
+    //       destination: `/plugins/${pluginId}`,
+    //       icon: pluginPkg.strapi.icon,
+    //       name: pluginPkg.strapi.name,
+    //       label: {
+    //         id: `${pluginId}.plugin.name`,
+    //         defaultMessage: 'WYSIWYG'
+    //       }
+    //     }
+    //   ]
+    // },
     mainComponent: null,
     name: pluginPkg.strapi.name,
     preventComponentRendering: false,
