@@ -1,5 +1,6 @@
 "use strict";
 const { sanitizeEntity } = require("strapi-utils");
+const _ = require("lodash");
 
 /**
  * Read the documentation (https://strapi.io/documentation/3.0.0-beta.x/concepts/controllers.html#core-controllers)
@@ -15,7 +16,9 @@ module.exports = {
     let entities = await strapi.services.page.find({});
 
     return entities
-      .filter((entity) => entity.metadata.menu.url === ctx.request.query.url)
+      .filter(
+        (entity) => _.get(entity, "metadata.menu.url") === ctx.request.query.url
+      )
       .map((entity) => sanitizeEntity(entity, { model: strapi.models.page }));
   },
 };
