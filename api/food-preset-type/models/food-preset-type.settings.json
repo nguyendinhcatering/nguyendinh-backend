@@ -40,6 +40,9 @@
         "customizableBuffet"
       ],
       "default": "table"
+    },
+    "order": {
+      "type": "integer"
     }
   }
 }

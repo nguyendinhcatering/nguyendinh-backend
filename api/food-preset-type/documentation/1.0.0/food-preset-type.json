@@ -669,6 +669,9 @@
               "customizableBuffet"
             ]
           },
+          "order": {
+            "type": "integer"
+          },
           "created_by": {
             "required": [
               "id",
@@ -869,6 +872,9 @@
               "buffet",
               "customizableBuffet"
             ]
+          },
+          "order": {
+            "type": "integer"
           },
           "created_by": {
             "type": "string"
