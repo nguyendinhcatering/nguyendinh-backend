@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "order"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "fullName": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "alternativePhone": {
+      "type": "string"
+    },
+    "orderType": {
+      "type": "string"
+    },
+    "orderPlaceType": {
+      "type": "string"
+    },
+    "note": {
+      "type": "text"
+    },
+    "orderDate": {
+      "type": "date"
+    },
+    "orderTime": {
+      "type": "time"
+    },
+    "orderData": {
+      "type": "json"
+    },
+    "secret": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}

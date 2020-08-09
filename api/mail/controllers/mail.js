@@ -9,8 +9,6 @@ const axios = Axios.create({ baseURL: process.env.MAILER_URL });
 
 module.exports = {
   contact: async (ctx) => {
-    console.log(ctx.request.body);
-
     try {
       await axios.post("/", {
         template: "contact-us",

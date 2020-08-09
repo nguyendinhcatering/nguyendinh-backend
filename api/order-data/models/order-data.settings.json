@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "order_data",
+  "info": {
+    "name": "orderData"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "orderType": {
+      "type": "text"
+    },
+    "orderPlaceType": {
+      "type": "text"
+    },
+    "orderSuccessText": {
+      "type": "richtext"
+    },
+    "orderSuccessHeader": {
+      "type": "string"
+    },
+    "responsibility": {
+      "type": "richtext"
+    }
+  }
+}

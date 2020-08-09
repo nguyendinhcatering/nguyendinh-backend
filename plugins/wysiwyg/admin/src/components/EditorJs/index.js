@@ -17,6 +17,7 @@ import Link from "@editorjs/link";
 import LinkButtonTool from "./plugins/link-button/bundle";
 import AccordionTool from "./plugins/accordion/bundle";
 import ColumnTool from "./plugins/column/bundle";
+import ColorPlugin from "editorjs-text-color-plugin";
 import { isEqual } from "lodash";
 
 const { ColumnStart, ColumnEnd, ColumnSplit } = ColumnTool;
@@ -103,6 +104,7 @@ const Editor = ({ onChange, name, value, holder }) => {
         tools={{
           header: {
             class: Header,
+            inlineToolbar: true,
             config: {
               levels: [1, 2, 3, 4, 5, 6],
               defaultLevel: 2,
@@ -126,7 +128,21 @@ const Editor = ({ onChange, name, value, holder }) => {
               },
             },
           },
-          marker: Marker,
+          Color: {
+            class: ColorPlugin,
+            config: {
+              colorCollections: ["#FFFFFF", "#000000", "#e10019"],
+              defaultColor: "#000000",
+              type: "text",
+            },
+          },
+          // marker: {
+          //   class: ColorPlugin,
+          //   config: {
+          //     defaultColor: "#FFBF00",
+          //     type: "marker",
+          //   },
+          // },
           table: {
             class: Table,
             inlineToolbar: true,
