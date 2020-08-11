@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/site-generic-data",
+      "handler": "site-generic-data.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/site-generic-data",
+      "handler": "site-generic-data.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/site-generic-data",
+      "handler": "site-generic-data.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

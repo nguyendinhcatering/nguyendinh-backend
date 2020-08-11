@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "site_generic_data",
+  "info": {
+    "name": "SiteGenericData"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "backgroundImages": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

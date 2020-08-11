@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_placeholder_placeholders",
+  "info": {
+    "name": "placeholder",
+    "icon": "allergies"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
