@@ -11,6 +11,11 @@
   "attributes": {
     "text": {
       "type": "richtext"
+    },
+    "placeholders": {
+      "type": "component",
+      "repeatable": true,
+      "component": "placeholder.placeholder"
     }
   }
 }
