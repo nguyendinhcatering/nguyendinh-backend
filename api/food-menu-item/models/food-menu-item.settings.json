@@ -31,6 +31,9 @@
     },
     "buffetPrice": {
       "type": "integer"
+    },
+    "order": {
+      "type": "integer"
     }
   }
 }
