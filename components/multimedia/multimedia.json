@@ -19,6 +19,15 @@
     },
     "embeddedMedia": {
       "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "image",
+        "video",
+        "map"
+      ],
+      "default": "image"
     }
   }
 }
