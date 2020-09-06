@@ -2,7 +2,7 @@
   "kind": "singleType",
   "collectionName": "site_generic_data",
   "info": {
-    "name": "SiteGenericData"
+    "name": "SiteOptions"
   },
   "options": {
     "increments": true,
@@ -19,6 +19,16 @@
       ],
       "plugin": "upload",
       "required": false
+    },
+    "placeholders": {
+      "type": "component",
+      "repeatable": true,
+      "component": "placeholder.placeholder"
+    },
+    "mapOptions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "map.location"
     }
   }
 }

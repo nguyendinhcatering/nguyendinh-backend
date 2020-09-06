@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_placeholder_icon_placeholders",
+  "info": {
+    "name": "IconPlaceholder",
+    "icon": "align-right"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

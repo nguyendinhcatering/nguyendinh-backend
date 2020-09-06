@@ -7,7 +7,17 @@
   "options": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "data": {
+      "type": "json"
+    },
+    "replacePlaceholder": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }

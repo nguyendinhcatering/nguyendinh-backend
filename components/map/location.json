@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_map_locations",
+  "info": {
+    "name": "location",
+    "icon": "haykal"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "longitude": {
+      "type": "float"
+    },
+    "latitude": {
+      "type": "float"
+    }
+  }
+}
