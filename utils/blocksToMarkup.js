@@ -52,7 +52,13 @@ const preprocessBlocks = (blocks) => {
 
 const parseData = (data) => {
   try {
-    return JSON.parse(data)?.blocks;
+    const data = JSON.parse(data);
+
+    if (data) {
+      return data.blocks;
+    }
+
+    return [];
   } catch (err) {
     return [];
   }
