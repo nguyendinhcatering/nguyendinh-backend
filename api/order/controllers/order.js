@@ -33,6 +33,7 @@ const sendMail = async (entityOrId) => {
   await strapi.services.mail.send({
     template: "order",
     smtpOptions: {
+      from: siteOptions.adminEmail,
       to: entity.email,
       cc: siteOptions.adminEmail,
     },

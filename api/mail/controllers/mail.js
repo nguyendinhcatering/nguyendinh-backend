@@ -15,6 +15,7 @@ module.exports = {
       await strapi.services.mail.send({
         template: "contact-us",
         smtpOptions: {
+          from: ctx.request.body.email,
           to: siteOptions.adminEmail,
         },
         variables: {

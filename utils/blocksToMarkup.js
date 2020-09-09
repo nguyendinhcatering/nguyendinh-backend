@@ -52,10 +52,10 @@ const preprocessBlocks = (blocks) => {
 
 const parseData = (data) => {
   try {
-    const data = JSON.parse(data);
+    const blockData = JSON.parse(data);
 
-    if (data) {
-      return data.blocks;
+    if (blockData) {
+      return blockData.blocks;
     }
 
     return [];
@@ -153,6 +153,8 @@ const renderEditorData = (editorData) => {
       }
     });
   });
+
+  console.log("res", res);
 
   return res;
 };
