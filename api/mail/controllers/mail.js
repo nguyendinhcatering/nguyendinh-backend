@@ -9,11 +9,13 @@ const axios = Axios.create({ baseURL: process.env.MAILER_URL });
 
 module.exports = {
   contact: async (ctx) => {
+    const siteOptions = await strapi.services["site-generic-data"].find();
+
     try {
-      await axios.post("/", {
+      await strapi.services.mail.send({
         template: "contact-us",
         smtpOptions: {
-          to: "kevin.nguyen0125@gmail.com",
+          to: siteOptions.adminEmail,
         },
         variables: {
           email: ctx.request.body.email,

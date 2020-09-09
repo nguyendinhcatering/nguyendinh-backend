@@ -29,6 +29,9 @@
       "type": "component",
       "repeatable": true,
       "component": "map.location"
+    },
+    "adminEmail": {
+      "type": "string"
     }
   }
 }
