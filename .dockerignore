@@ -1,0 +1,12 @@
+.cache
+.idea
+build
+node_modules
+.editorconfig
+.env
+.env.example
+.gitignore
+*.md
+public/uploads
+Dockerfile
+.dockerignore

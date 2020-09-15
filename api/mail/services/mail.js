@@ -1,7 +1,6 @@
 "use strict";
 const _ = require("lodash");
-const Axios = require("axios");
-const axios = Axios.create({ baseURL: process.env.MAILER_URL });
+const axios = require("axios");
 
 /**
  * Read the documentation (https://strapi.io/documentation/3.0.0-beta.x/concepts/services.html#core-services)
@@ -11,7 +10,7 @@ const axios = Axios.create({ baseURL: process.env.MAILER_URL });
 module.exports = {
   send: async (ctx) => {
     try {
-      await axios.post("/", ctx);
+      await axios.post(`${process.env.MAILER_URL}/`, ctx);
 
       return "Successfully sent email";
     } catch (err) {

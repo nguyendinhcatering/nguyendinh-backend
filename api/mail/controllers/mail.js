@@ -1,6 +1,5 @@
 "use strict";
 const Axios = require("axios");
-const axios = Axios.create({ baseURL: process.env.MAILER_URL });
 
 /**
  * Read the documentation (https://strapi.io/documentation/3.0.0-beta.x/concepts/controllers.html#core-controllers)
