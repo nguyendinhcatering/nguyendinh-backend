@@ -11,10 +11,10 @@ module.exports = {
   },
   settings: {
     logger: {
-      level: "info",
+      level: "debug",
     },
     gzip: {
-      enabled: true,
+      enabled: false,
     },
     poweredBy: {
       enabled: false,
