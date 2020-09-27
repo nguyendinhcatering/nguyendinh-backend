@@ -43,6 +43,9 @@
     },
     "order": {
       "type": "integer"
+    },
+    "unit": {
+      "type": "string"
     }
   }
 }

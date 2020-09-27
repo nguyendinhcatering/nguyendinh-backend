@@ -31,7 +31,7 @@
       "type": "text"
     },
     "orderDate": {
-      "type": "date"
+      "type": "datetime"
     },
     "orderTime": {
       "type": "time"
@@ -44,6 +44,12 @@
     },
     "email": {
       "type": "email"
+    },
+    "address": {
+      "type": "string"
+    },
+    "paymentMethod": {
+      "type": "json"
     }
   }
 }
