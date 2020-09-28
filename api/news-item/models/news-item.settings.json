@@ -32,6 +32,12 @@
     },
     "banners": {
       "collection": "banner"
+    },
+    "head": {
+      "type": "component",
+      "repeatable": false,
+      "component": "section.text-image-section",
+      "required": true
     }
   }
 }

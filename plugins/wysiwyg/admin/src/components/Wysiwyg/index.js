@@ -17,6 +17,7 @@ const WysiwygWithErrors = ({
 }) => {
   const [isMediaLibOpen, setMediaLibOpen] = useState(false);
   const holder = useRef(name + uuid());
+  console.log(holder.current);
   let spacer = !isEmpty(inputDescription) ? (
     <div style={{ height: ".4rem" }} />
   ) : (
@@ -65,7 +66,6 @@ const WysiwygWithErrors = ({
 
   return (
     <div
-      className="col-12"
       style={{
         marginBottom: "1.6rem",
         fontSize: "1.3rem",

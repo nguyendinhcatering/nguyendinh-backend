@@ -216,7 +216,14 @@ const Editor = ({ onChange, name, value, holder }) => {
         holder={holder.current}
         initialBlock="paragraph"
       >
-        <div id={holder.current} />
+        <div
+          id={holder.current}
+          style={{
+            backgroundColor: "white",
+            marginTop: "16px",
+            paddingTop: "16px",
+          }}
+        />
       </EditorJs>
     </Wrapper>
   );
