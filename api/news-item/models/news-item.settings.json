@@ -38,6 +38,11 @@
       "repeatable": false,
       "component": "section.text-image-section",
       "required": true
+    },
+    "published": {
+      "type": "boolean",
+      "default": true,
+      "private": false
     }
   }
 }

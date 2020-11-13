@@ -10,6 +10,14 @@
     },
     {
       "method": "GET",
+      "path": "/news-types/:id/news-items",
+      "handler": "news-type.findByNewsType",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/news-types/count",
       "handler": "news-type.count",
       "config": {

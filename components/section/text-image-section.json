@@ -27,7 +27,8 @@
         "right",
         "background",
         "mediaOnly",
-        "gallery"
+        "gallery",
+        "newsItem"
       ],
       "default": "left"
     },
