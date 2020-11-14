@@ -16,8 +16,8 @@
       "type": "integer"
     },
     "foodCategories": {
-      "collection": "food-category",
       "via": "foodMenuItems",
+      "collection": "food-category",
       "dominant": true
     },
     "isSeasonal": {
@@ -34,6 +34,11 @@
     },
     "order": {
       "type": "integer"
+    },
+    "overrides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "overrides.preset-override"
     }
   }
 }

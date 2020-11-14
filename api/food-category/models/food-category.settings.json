@@ -19,11 +19,16 @@
       "type": "integer"
     },
     "foodMenuItems": {
-      "via": "foodCategories",
-      "collection": "food-menu-item"
+      "collection": "food-menu-item",
+      "via": "foodCategories"
     },
     "orderInBuffet": {
       "type": "integer"
+    },
+    "overrides": {
+      "type": "component",
+      "repeatable": true,
+      "component": "overrides.food-category-override"
     }
   }
 }

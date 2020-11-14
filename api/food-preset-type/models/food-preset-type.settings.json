@@ -37,7 +37,9 @@
         "table",
         "customizableTable",
         "buffet",
-        "customizableBuffet"
+        "customizableBuffet",
+        "customizable",
+        "preset"
       ],
       "default": "table"
     },

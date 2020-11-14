@@ -21,6 +21,10 @@
     },
     "foodMenuItems": {
       "collection": "food-menu-item"
+    },
+    "managementName": {
+      "type": "string",
+      "private": true
     }
   }
 }

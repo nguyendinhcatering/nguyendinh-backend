@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_overrides_food_category_overrides",
+  "info": {
+    "name": "FoodCategoryOverride",
+    "icon": "air-freshener"
+  },
+  "options": {},
+  "attributes": {
+    "allowed": {
+      "type": "boolean",
+      "default": true
+    },
+    "order": {
+      "type": "integer"
+    },
+    "foodPresetTypes": {
+      "collection": "food-preset-type"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "preset",
+        "customizable"
+      ]
+    }
+  }
+}

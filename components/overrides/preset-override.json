@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_overrides_preset_overrides",
+  "info": {
+    "name": "PresetOverride",
+    "icon": "align-left"
+  },
+  "options": {},
+  "attributes": {
+    "foodPresetTypes": {
+      "collection": "food-preset-type"
+    },
+    "allowed": {
+      "type": "boolean",
+      "default": true
+    },
+    "isSeasonal": {
+      "type": "boolean",
+      "default": false
+    },
+    "price": {
+      "type": "integer"
+    },
+    "order": {
+      "type": "integer"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "preset",
+        "customizable"
+      ]
+    }
+  }
+}
