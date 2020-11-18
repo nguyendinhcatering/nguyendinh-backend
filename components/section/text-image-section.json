@@ -62,6 +62,14 @@
         "primary"
       ],
       "default": "black"
+    },
+    "mediaFit": {
+      "type": "enumeration",
+      "enum": [
+        "contain",
+        "cover"
+      ],
+      "default": "cover"
     }
   }
 }
