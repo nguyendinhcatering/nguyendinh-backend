@@ -2,11 +2,13 @@
   "kind": "singleType",
   "collectionName": "order_data",
   "info": {
-    "name": "orderData"
+    "name": "orderData",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "orderType": {
@@ -23,6 +25,11 @@
     },
     "responsibility": {
       "type": "richtext"
+    },
+    "bankInfo": {
+      "type": "component",
+      "repeatable": true,
+      "component": "order.bank-info"
     }
   }
 }
