@@ -10,7 +10,6 @@
     "build:prod": "NODE_ENV=production strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
     "@editorjs/checklist": "^1.1.0",
     "@editorjs/delimiter": "^1.1.0",
@@ -29,19 +28,19 @@
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "editorjs-text-color-plugin": "^1.1.22",
-    "knex": "^0.19.5",
+    "knex": "^0.20.0",
     "markdown-to-jsx": "^7.0.0",
     "moment": "^2.28.0",
     "pg": "^8.3.3",
-    "strapi": "^3.3.4",
-    "strapi-admin": "^3.3.4",
-    "strapi-connector-bookshelf": "^3.3.4",
-    "strapi-plugin-content-manager": "^3.3.4",
-    "strapi-plugin-content-type-builder": "^3.3.4",
-    "strapi-plugin-email": "^3.3.4",
-    "strapi-plugin-upload": "^3.3.4",
-    "strapi-plugin-users-permissions": "^3.3.4",
-    "strapi-utils": "^3.3.4"
+    "strapi": "^3.4.0",
+    "strapi-admin": "^3.4.0",
+    "strapi-connector-bookshelf": "^3.4.0",
+    "strapi-plugin-content-manager": "^3.4.0",
+    "strapi-plugin-content-type-builder": "^3.4.0",
+    "strapi-plugin-email": "^3.4.0",
+    "strapi-plugin-upload": "^3.4.0",
+    "strapi-plugin-users-permissions": "^3.4.0",
+    "strapi-utils": "^3.4.0"
   },
   "author": {
     "name": "A Strapi developer"
