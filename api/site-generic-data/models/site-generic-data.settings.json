@@ -2,11 +2,13 @@
   "kind": "singleType",
   "collectionName": "site_generic_data",
   "info": {
-    "name": "SiteOptions"
+    "name": "SiteOptions",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "backgroundImages": {
@@ -37,6 +39,18 @@
       "type": "string"
     },
     "apiPageUrl": {
+      "type": "string"
+    },
+    "fbAppId": {
+      "type": "string"
+    },
+    "fbPageId": {
+      "type": "string"
+    },
+    "fbChatThemeColor": {
+      "type": "string"
+    },
+    "fbChatGreetingMessage": {
       "type": "string"
     }
   }
