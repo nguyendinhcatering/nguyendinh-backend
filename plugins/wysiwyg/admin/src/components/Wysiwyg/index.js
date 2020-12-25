@@ -74,7 +74,7 @@ const WysiwygWithErrors = ({
   const handleToggle = () => setMediaLibOpen(!isMediaLibOpen);
 
   if (!isReady) {
-    return <div>Hi</div>;
+    return <div>Loading...</div>;
   }
 
   return (
