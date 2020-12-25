@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { isEmpty } from "lodash";
 import { Label, InputDescription, InputErrors } from "strapi-helper-plugin";
@@ -17,7 +17,16 @@ const WysiwygWithErrors = ({
 }) => {
   const [isMediaLibOpen, setMediaLibOpen] = useState(false);
   const holder = useRef(name + uuid());
-  console.log(holder.current);
+  const [isReady, setReady] = useState(false);
+
+  useEffect(() => {
+    if (!isReady) {
+      console.log("test");
+      setTimeout(() => {
+        setReady(true);
+      }, 1000);
+    }
+  }, []);
   let spacer = !isEmpty(inputDescription) ? (
     <div style={{ height: ".4rem" }} />
   ) : (
@@ -63,6 +72,10 @@ const WysiwygWithErrors = ({
   };
 
   const handleToggle = () => setMediaLibOpen(!isMediaLibOpen);
+
+  if (!isReady) {
+    return <div>Hi</div>;
+  }
 
   return (
     <div
