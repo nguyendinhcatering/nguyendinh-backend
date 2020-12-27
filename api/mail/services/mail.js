@@ -80,12 +80,12 @@ module.exports = {
 
     const siteOptions = await strapi.services["site-generic-data"].find();
 
-    const orderDate = moment(entity.orderDate);
+    const orderDate = moment(entity.orderDateText, "DD/MM/YYYY");
 
     const orderDateString = `${orderDate.format("L")} (${_.capitalize(
       moment(orderDate).format("dddd")
     )})`;
-    const orderTimeString = orderDate.format("hh:mm A");
+    const orderTimeString = entity.orderTimeText;
 
     await sendViaSendgrid({
       templateId: "d-5a560a536950497ca69b74838b3d50fa",
