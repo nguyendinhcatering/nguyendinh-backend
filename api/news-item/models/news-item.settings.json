@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "news_items",
   "info": {
-    "name": "newsItem"
+    "name": "newsItem",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "metadata": {

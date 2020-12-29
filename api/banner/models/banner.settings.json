@@ -2,11 +2,13 @@
   "kind": "collectionType",
   "collectionName": "banners",
   "info": {
-    "name": "banner"
+    "name": "banner",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "text": {
@@ -67,6 +69,11 @@
         "primary"
       ],
       "default": "black"
+    },
+    "mobileMedia": {
+      "type": "component",
+      "repeatable": false,
+      "component": "multimedia.multimedia"
     }
   }
 }
