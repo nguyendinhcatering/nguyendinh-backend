@@ -25,7 +25,7 @@
     "@editorjs/table": "^1.2.2",
     "@natterstefan/react-editor-js": "^0.3.1",
     "@sendgrid/mail": "^7.2.6",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "editorjs-text-color-plugin": "^1.1.22",
     "knex": "^0.20.0",
