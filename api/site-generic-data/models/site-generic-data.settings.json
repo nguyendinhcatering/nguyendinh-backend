@@ -52,6 +52,9 @@
     },
     "fbChatGreetingMessage": {
       "type": "string"
+    },
+    "ccEmails": {
+      "type": "string"
     }
   }
 }

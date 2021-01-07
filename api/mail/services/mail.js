@@ -49,6 +49,9 @@ module.exports = {
   sendContactUs: async (ctx) => {
     {
       const siteOptions = await strapi.services["site-generic-data"].find();
+      const ccEmails = (siteOptions.ccEmails || "")
+        .split(",")
+        .map((email) => _.trim(email));
 
       try {
         await sendViaSendgrid({
@@ -56,6 +59,7 @@ module.exports = {
           from: siteOptions.adminEmail,
           replyTo: ctx.request.body.email,
           to: siteOptions.adminEmail,
+          cc: ccEmails,
           dynamicTemplateData: {
             email: ctx.request.body.email,
             name: ctx.request.body.name,
@@ -79,6 +83,9 @@ module.exports = {
     }
 
     const siteOptions = await strapi.services["site-generic-data"].find();
+    const ccEmails = (siteOptions.ccEmails || "")
+      .split(",")
+      .map((email) => _.trim(email));
 
     const orderDate = moment(entity.orderDateText, "DD/MM/YYYY");
 
@@ -92,7 +99,7 @@ module.exports = {
       from: siteOptions.adminEmail,
       replyTo: siteOptions.adminEmail,
       to: entity.email,
-      cc: siteOptions.adminEmail,
+      cc: _.uniq([siteOptions.adminEmail, ...ccEmails]),
       dynamicTemplateData: {
         id: `ND${_.padStart(entity.id, 6, "0")}`,
         title: entity.title,
