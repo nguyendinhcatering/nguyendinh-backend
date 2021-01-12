@@ -100,7 +100,7 @@ module.exports = {
         from: siteOptions.adminEmail,
         replyTo: siteOptions.adminEmail,
         to: entity.email,
-        cc: _.uniq([siteOptions.adminEmail, ...ccEmails]),
+        cc: _.uniq([siteOptions.adminEmail, ...ccEmails]).filter(email => email !== entity.email),
         dynamicTemplateData: {
           id: `ND${_.padStart(entity.id, 6, "0")}`,
           title: entity.title,
