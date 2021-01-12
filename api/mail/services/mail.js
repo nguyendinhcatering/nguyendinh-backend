@@ -93,39 +93,43 @@ module.exports = {
       moment(orderDate).format("dddd")
     )})`;
     const orderTimeString = entity.orderTimeText;
-
-    await sendViaSendgrid({
-      templateId: "d-5a560a536950497ca69b74838b3d50fa",
-      from: siteOptions.adminEmail,
-      replyTo: siteOptions.adminEmail,
-      to: entity.email,
-      cc: _.uniq([siteOptions.adminEmail, ...ccEmails]),
-      dynamicTemplateData: {
-        id: `ND${_.padStart(entity.id, 6, "0")}`,
-        title: entity.title,
-        fullName: entity.fullName,
-        orderType: entity.orderType,
-        email: entity.email,
-        phone: entity.phone,
-        address: entity.address,
-        paymentMethod: entity.paymentMethod,
-        alternativePhone: entity.alternativePhone,
-        note: entity.note,
-        orderData: {
-          unit: entity.orderData.meta.unit,
-          quantity: entity.orderData.quantity,
-          presetItems: entity.orderData.presetItems.map((presetItem) => ({
-            ...presetItem,
-            price: formatNumber(presetItem.price),
-          })),
-          unitPrice: formatNumber(entity.orderData.unitPrice),
-          totalPrice: formatNumber(
-            entity.orderData.unitPrice * entity.orderData.quantity
-          ),
+    
+    try {
+      await sendViaSendgrid({
+        templateId: "d-5a560a536950497ca69b74838b3d50fa",
+        from: siteOptions.adminEmail,
+        replyTo: siteOptions.adminEmail,
+        to: entity.email,
+        cc: _.uniq([siteOptions.adminEmail, ...ccEmails]),
+        dynamicTemplateData: {
+          id: `ND${_.padStart(entity.id, 6, "0")}`,
+          title: entity.title,
+          fullName: entity.fullName,
+          orderType: entity.orderType,
+          email: entity.email,
+          phone: entity.phone,
+          address: entity.address,
+          paymentMethod: entity.paymentMethod,
+          alternativePhone: entity.alternativePhone,
+          note: entity.note,
+          orderData: {
+            unit: entity.orderData.meta.unit,
+            quantity: entity.orderData.quantity,
+            presetItems: entity.orderData.presetItems.map((presetItem) => ({
+              ...presetItem,
+              price: formatNumber(presetItem.price),
+            })),
+            unitPrice: formatNumber(entity.orderData.unitPrice),
+            totalPrice: formatNumber(
+              entity.orderData.unitPrice * entity.orderData.quantity
+            ),
+          },
+          orderDate: orderDateString,
+          orderTime: orderTimeString,
         },
-        orderDate: orderDateString,
-        orderTime: orderTimeString,
-      },
-    });
+      });
+    } catch (err) {
+      console.log(err)
+    }
   },
 };
