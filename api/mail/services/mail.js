@@ -46,7 +46,7 @@ module.exports = {
       return "Cannot send email";
     }
   },
-  sendContactUs: async (ctx) => {
+  sendContactUs: async (payload) => {
     {
       const siteOptions = await strapi.services["site-generic-data"].find();
       const ccEmails = (siteOptions.ccEmails || "")
@@ -54,24 +54,20 @@ module.exports = {
         .map((email) => _.trim(email));
 
       try {
-        await sendViaSendgrid({
+        const response = await sendViaSendgrid({
           templateId: "d-2719b91003364a43a0737f130dd3ae7e",
           from: siteOptions.adminEmail,
-          replyTo: ctx.request.body.email,
+          replyTo: payload.email,
           to: siteOptions.adminEmail,
           cc: ccEmails,
-          dynamicTemplateData: {
-            email: ctx.request.body.email,
-            name: ctx.request.body.name,
-            message: ctx.request.body.message,
-            address: ctx.request.body.address,
-          },
+          dynamicTemplateData: payload,
         });
 
-        ctx.response.status = 200;
+        console.log(response);
+
         return "Successfully sent email";
       } catch (err) {
-        ctx.response.status = 400;
+        console.error(err);
         return "Cannot send email";
       }
     }
@@ -93,14 +89,16 @@ module.exports = {
       moment(orderDate).format("dddd")
     )})`;
     const orderTimeString = entity.orderTimeText;
-    
+
     try {
       await sendViaSendgrid({
         templateId: "d-5a560a536950497ca69b74838b3d50fa",
         from: siteOptions.adminEmail,
         replyTo: siteOptions.adminEmail,
         to: entity.email,
-        cc: _.uniq([siteOptions.adminEmail, ...ccEmails]).filter(email => email !== entity.email),
+        cc: _.uniq([siteOptions.adminEmail, ...ccEmails]).filter(
+          (email) => email !== entity.email
+        ),
         dynamicTemplateData: {
           id: `ND${_.padStart(entity.id, 6, "0")}`,
           title: entity.title,
@@ -129,7 +127,7 @@ module.exports = {
         },
       });
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
   },
 };
