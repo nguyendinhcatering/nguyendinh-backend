@@ -55,6 +55,9 @@
     },
     "ccEmails": {
       "type": "string"
+    },
+    "googleTagId": {
+      "type": "string"
     }
   }
 }
