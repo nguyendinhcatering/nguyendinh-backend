@@ -74,6 +74,13 @@
       "type": "component",
       "repeatable": false,
       "component": "multimedia.multimedia"
+    },
+    "isHidden": {
+      "type": "boolean",
+      "default": false
+    },
+    "onClickUrl": {
+      "type": "string"
     }
   }
 }
