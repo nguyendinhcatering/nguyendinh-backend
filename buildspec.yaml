@@ -1,0 +1,19 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - export ACCOUNT_ID=$(aws sts get-caller-identity --query "Account" --output text)
+      - export ECR_URL=$ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com
+      # Authenticate helm with ECR
+      - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin ${ECR_URL}
+      - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
+      - IMAGE_URI="${ECR_URL}/app/backend:${TAG}"
+  build:
+    commands:
+      - docker build --tag "$IMAGE_URI" .
+  post_build:
+    commands:
+      - docker push "$IMAGE_URI"
+      - printf '[{"name":"user_container","imageUri":"%s"}]' "$IMAGE_URI" > imagedefinitions.json
+artifacts:
+  files: imagedefinitions.json
