@@ -8,12 +8,16 @@ phases:
       - aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --password-stdin ${ECR_URL}
       - TAG="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | head -c 8)"
       - IMAGE_URI="${ECR_URL}/app/backend:${TAG}"
+      - LATEST_IMAGE_URI="${ECR_URL}/app/backend:latest"
   build:
     commands:
+      - docker pull "$LATEST_IMAGE_URI" || true
       - docker build --tag "$IMAGE_URI" .
+      - docker tag "$IMAGE_URI" "$LATEST_IMAGE_URI"
   post_build:
     commands:
       - docker push "$IMAGE_URI"
+      - docker push "$LATEST_IMAGE_URI"
       - printf '[{"name":"user_container","imageUri":"%s"}]' "$IMAGE_URI" > imagedefinitions.json
 artifacts:
   files: imagedefinitions.json

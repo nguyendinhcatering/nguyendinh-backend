@@ -40,6 +40,7 @@
     "strapi-plugin-email": "^3.4.1",
     "strapi-plugin-upload": "^3.4.1",
     "strapi-plugin-users-permissions": "^3.4.1",
+    "strapi-provider-upload-s3-cloudfront": "file:providers/strapi-provider-upload-s3-cloudfront",
     "strapi-utils": "^3.4.1"
   },
   "author": {
