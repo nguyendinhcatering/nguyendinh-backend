@@ -27,6 +27,7 @@ module.exports = {
               Body: Buffer.from(file.buffer, "binary"),
               ACL: "public-read",
               ContentType: file.mime,
+              CacheControl: `public, max-age=${config.cacheMaxAge || "172800"}`,
               ...customParams,
             },
             (err, data) => {
