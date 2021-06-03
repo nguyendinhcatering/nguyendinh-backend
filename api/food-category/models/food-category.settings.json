@@ -19,8 +19,8 @@
       "type": "integer"
     },
     "foodMenuItems": {
-      "collection": "food-menu-item",
-      "via": "foodCategories"
+      "via": "foodCategories",
+      "collection": "food-menu-item"
     },
     "orderInBuffet": {
       "type": "integer"
