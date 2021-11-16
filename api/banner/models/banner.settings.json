@@ -81,6 +81,9 @@
     },
     "onClickUrl": {
       "type": "string"
+    },
+    "order": {
+      "type": "integer"
     }
   }
 }
