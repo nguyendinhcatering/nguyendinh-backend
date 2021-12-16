@@ -18,35 +18,44 @@ module.exports = {
 
     return {
       upload(file, customParams = {}) {
-        console.log('Uploading', file);
+        console.log("starting upload", file);
         return new Promise((resolve, reject) => {
           // upload file on S3 bucket
           const path = file.path ? `${file.path}/` : "";
-          S3.upload(
-            {
-              Key: `${path}${file.hash}${file.ext}`,
-              Body: Buffer.from(file.buffer, "binary"),
-              ACL: "public-read",
-              ContentType: file.mime,
-              CacheControl: `public, max-age=${config.cacheMaxAge || "172800"}`,
-              ...customParams,
-            },
-            (err, data) => {
-              if (err) {
-                console.log(err);
-                return reject(err);
-              }
+          try {
+            S3.upload(
+              {
+                Key: `${path}${file.hash}${file.ext}`,
+                Body: Buffer.from(file.buffer, "binary"),
+                ACL: "public-read",
+                ContentType: file.mime,
+                CacheControl: `public, max-age=${
+                  config.cacheMaxAge || "172800"
+                }`,
+                ...customParams,
+              },
+              (err, data) => {
+                console.log("uploaded data");
+                if (err) {
+                  console.log(err);
+                  return reject(err);
+                }
 
-              // set the bucket file url
-              if (config.cdn) {
-                file.url = `${config.cdn}${data.Key}`;
-              } else {
-                file.url = data.Location;
-              }
+                // set the bucket file url
+                if (config.cdn) {
+                  file.url = `${config.cdn}${data.Key}`;
+                } else {
+                  file.url = data.Location;
+                }
 
-              resolve();
-            }
-          );
+                resolve();
+              }
+            );
+          } catch (err) {
+            console.log("error while uploading");
+            console.log(err);
+            reject(err);
+          }
         });
       },
       delete(file, customParams = {}) {
