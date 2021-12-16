@@ -18,6 +18,7 @@ module.exports = {
 
     return {
       upload(file, customParams = {}) {
+        console.log('Uploading', file);
         return new Promise((resolve, reject) => {
           // upload file on S3 bucket
           const path = file.path ? `${file.path}/` : "";
@@ -32,6 +33,7 @@ module.exports = {
             },
             (err, data) => {
               if (err) {
+                console.log(err);
                 return reject(err);
               }
 
