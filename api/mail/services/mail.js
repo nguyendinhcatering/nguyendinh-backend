@@ -4,21 +4,33 @@ const axios = require("axios");
 const { formatNumber } = require("../../../utils/formatNumber");
 const moment = require("moment");
 require("moment/locale/vi");
-const sgMail = require("@sendgrid/mail");
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+const nodemailer = require("nodemailer");
 
-const sendViaSendgrid = async (payload) => {
-  const message = {
+const Handlebars = require('handlebars');
+require('./views.compiled');
+const mjml = require('mjml');
+
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.MAILER_USERNAME,
+    pass: process.env.MAILER_PASSWORD,
+  },
+});
+
+const sendViaNodemailer = async (payload) => {
+  console.log(payload);
+  const templateId = payload.templateId;
+
+  const html = mjml(Handlebars.templates[templateId](payload.dynamicTemplateData)).html;
+
+  return await transporter.sendMail({
     from: payload.from,
-    replyTo: payload.from,
-    to: payload.to,
-    cc: payload.cc,
-    templateId: payload.templateId,
-    dynamicTemplateData: payload.dynamicTemplateData,
-  };
-
-  return sgMail.send(message);
-};
+    to: [payload.to, payload.cc].join(' '),
+    subject: payload.subject,
+    html,
+  });
+}
 
 /**
  * Read the documentation (https://strapi.io/documentation/3.0.0-beta.x/concepts/services.html#core-services)
@@ -35,17 +47,6 @@ module.exports = {
       return "Cannot send email";
     }
   },
-  sendViaSendgrid: async (payload) => {
-    try {
-      await sendViaSendgrid(payload);
-
-      return "Successfully sent email";
-    } catch (err) {
-      console.error(err);
-
-      return "Cannot send email";
-    }
-  },
   sendContactUs: async (payload) => {
     {
       const siteOptions = await strapi.services["site-generic-data"].find();
@@ -54,8 +55,9 @@ module.exports = {
         .map((email) => _.trim(email));
 
       try {
-        const response = await sendViaSendgrid({
-          templateId: "d-2719b91003364a43a0737f130dd3ae7e",
+        const response = await sendViaNodemailer({
+          templateId: "contact-us.mjml",
+          subject: "Nguyên Đình - Khách hàng để lại lời nhắn",
           from: siteOptions.adminEmail,
           replyTo: payload.email,
           to: siteOptions.adminEmail,
@@ -91,8 +93,9 @@ module.exports = {
     const orderTimeString = entity.orderTimeText;
 
     try {
-      await sendViaSendgrid({
-        templateId: "d-5a560a536950497ca69b74838b3d50fa",
+      await sendViaNodemailer({
+        templateId: "order.mjml",
+        subject: `Nguyên Đình - Thực đơn từ ${entity.title} ${entity.fullName}`,
         from: siteOptions.adminEmail,
         replyTo: siteOptions.adminEmail,
         to: entity.email,

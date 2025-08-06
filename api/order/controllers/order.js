@@ -27,6 +27,7 @@ module.exports = {
   },
   async create(ctx) {
     let entity;
+    console.log(ctx.request.body);
     if (ctx.is("multipart")) {
       const { data, files } = parseMultipartData(ctx);
       entity = await strapi.services.order.create(data, { files });

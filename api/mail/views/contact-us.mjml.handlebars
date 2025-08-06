@@ -1,0 +1,32 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      <mj-all font-family="Arial"/>
+      <mj-class name="red" color="#e10019" font-weight="700"/>
+      <mj-class name="gray" color="#4a5568" font-weight="700"/>
+      <mj-html-attributes>
+        <mj-selector path=".table tr">
+          <mj-html-attribute name="style">
+            border-bottom:1px solid black
+          </mj-html-attribute>
+        </mj-selector>
+      </mj-html-attributes>
+    </mj-attributes>
+  </mj-head>
+  <mj-body>
+    <mj-section>
+      <mj-column>
+        <mj-text>
+          Khách hàng {{name}} - {{ email }} có số điện thoại {{ phone }} đã để lại lời nhắn
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+        <mj-text>
+          {{ message }}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

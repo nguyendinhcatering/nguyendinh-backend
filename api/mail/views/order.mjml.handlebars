@@ -1,0 +1,268 @@
+<mjml>
+  <mj-head>
+    <mj-attributes>
+      <mj-all font-family="Arial"/>
+      <mj-class name="red" color="#e10019" font-weight="700"/>
+      <mj-class name="gray" color="#4a5568" font-weight="700"/>
+      <mj-html-attributes>
+        <mj-selector path=".table tr">
+          <mj-html-attribute name="style">
+            border-bottom:1px solid black
+          </mj-html-attribute>
+        </mj-selector>
+      </mj-html-attributes>
+    </mj-attributes>
+  </mj-head>
+  <mj-body>
+    <mj-section>
+      <mj-column>
+        <mj-image width="100px" src="https://assets.nguyendinh.com/Nguyen_Dinh_Logo_1_99e3953fb5.png"></mj-image>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+        <mj-text>Cảm ơn Quý khách đã gửi đơn hàng tới Công ty TNHH Ăn uống và Tổ chức sự kiện Nguyên Đình. Sau
+          đây là thông tin đặt hàng của Quý khách.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+        <mj-text mj-class="red">
+          MÃ ĐƠN HÀNG CỦA BẠN
+        </mj-text>
+        <mj-text>
+          {{ id }}
+        </mj-text>
+      </mj-column>
+      <mj-column>
+        <mj-text mj-class="red">
+          SỐ LƯỢNG | LOẠI HÌNH TIỆC
+        </mj-text>
+        <mj-text>
+          {{ orderData.quantity }} {{ orderData.meta.unit }} | {{ orderType }}
+        </mj-text>
+        <mj-text mj-class="red">
+          NGÀY GIAO HÀNG | THỜI GIAN GIAO HÀNG
+        </mj-text>
+        <mj-text>
+          {{ orderDate }} | {{ orderTime }}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+        <mj-divider border-width="1px">
+        </mj-divider>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+        <mj-text mj-class="red">
+          THÔNG TIN KHÁCH HÀNG
+        </mj-text>
+        <mj-text mj-class="gray">
+          Họ và tên
+        </mj-text>
+        <mj-text>
+          {{ title }} {{ fullName }}
+        </mj-text>
+        <mj-text mj-class="gray">
+          Địa chỉ email
+        </mj-text>
+        <mj-text>
+          {{ email }}
+        </mj-text>
+        <mj-text mj-class="gray">
+          Số điện thoại liên lạc
+        </mj-text>
+        <mj-text>
+          {{ phone }}
+        </mj-text>
+        <mj-text mj-class="gray">
+          Phương thức thanh toán
+        </mj-text>
+        <mj-text>
+          {{ paymentMethod.type }}
+        </mj-text>
+      </mj-column>
+      <mj-column>
+        <mj-text mj-class="red">
+          CHI TIẾT GIAO HÀNG
+        </mj-text>
+        <mj-text mj-class="gray">
+          Địa chỉ giao hàng
+        </mj-text>
+        <mj-text>
+          {{ address }}
+        </mj-text>
+        <mj-text mj-class="gray">
+          Ngày giao hàng
+        </mj-text>
+        <mj-text>
+          {{ orderDate }}
+        </mj-text>
+        <mj-text mj-class="gray">
+          Thời gian giao hàng
+        </mj-text>
+        <mj-text>
+          {{ orderTime }}
+        </mj-text>
+        <mj-text mj-class="gray">
+          Tổng số lượng đơn hàng
+        </mj-text>
+        <mj-text>
+          {{ orderData.quantity }} {{ orderData.unit }}
+        </mj-text>
+        <mj-text mj-class="gray">
+          Loại hình tiệc
+        </mj-text>
+        <mj-text>
+          {{ orderType }}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+        <mj-divider border-width="1px">
+        </mj-divider>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+        <mj-table border="1px solid black" cellpadding="4px">
+          <tr style="border-bottom:1px solid black">
+            <th font-weight="700" style="text-align:left; border-right:1px solid black">Hạng mục</th>
+            <th font-weight="700" style="text-align:right;">Đơn giá (VNĐ)</th>
+          </tr>
+          {{#each orderData.presetItems}}
+            <tr style="border-bottom:1px solid black;">
+              <td style="border-right:1px solid black;">{{ name }}</td>
+              <td style="text-align:right;">{{ price }}</td>
+            </tr>
+          {{/each}}
+          <tr style="border-bottom:1px solid black">
+            <td style="font-weight: 700;border-right: 1px solid black;">Đơn giá</td>
+            <td style="text-align:right;">{{ orderData.unitPrice }}</td>
+          </tr>
+          <tr style="border-bottom:1px solid black">
+            <td style="font-weight: 700;border-right: 1px solid black;">Số lượng {{ unit }}</td>
+            <td style="text-align:right;">{{ orderData.quantity }}</td>
+          </tr>
+          <tr style="border-bottom:1px solid black">
+            <td style="font-weight: 700;border-right: 1px solid black;">Thành tiền</td>
+            <td style="text-align:right;">{{ orderData.totalPrice }}</td>
+          </tr>
+          <tr style="border-bottom:1px solid black">
+            <td style="text-align: right; font-style: italic;" colspan="2">Đơn giá chưa bao gốm thuế VAT</td>
+          </tr>
+        </mj-table>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+        <mj-divider border-width="1px">
+        </mj-divider>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+        <mj-text mj-class="red" align="center">Trách nhiệm của mỗi bên</mj-text>
+        <mj-text mj-class="red">
+          Đơn giá trên bao gồm
+        </mj-text>
+        <mj-text>
+          <ul>
+            <li>
+              Các món ăn theo thực đơn đã chọn, chế biến ngon, đẹp, đầy đặn, phục vụ nóng, đúng thời gian.
+            </li>
+            <li>
+              Dụng cụ phục vụ tiệc, bát đĩa, ly, cốc, khăn trải bàn, khăn ướt, giấy ăn, tăm đũa...Nhân
+              viên phục vụ đồng phục, sang trọng, lịch sự, phục vụ chuyên nghiệp.
+            </li>
+            <li>
+              Đơn giá đã bao gồm thuế VAT.
+            </li>
+            <li>
+              Đối với tiệc ngồi bàn: Đơn giá trên áp dụng cho tiệc số lượng lớn, tiệc cưới. Các tiệc nhỏ
+              dưới 10 mâm tính thêm 500.000đ phí phụ cho cả buổi tiệc.
+            </li>
+            <li>
+              Đối với tiệc đứng buffet: Đơn giá trên áp dụng cho tiệc số lượng từ 100 khách trở lên. Các
+              tiệc nhỏ dưới 100 khách tính thêm 500.000đ phí phụ cho cả buổi tiệc.
+            </li>
+          </ul>
+        </mj-text>
+        <mj-text mj-class="red">
+          Lưu ý khi đặt tiệc online
+        </mj-text>
+        <mj-text mj-class="gray">
+          Phương thức đặt tiệc
+        </mj-text>
+        <mj-text>
+          <ul>
+            <li>Website này được thiết kế tạo sự thuận lợi cho khách hàng trong việc tham khảo, lựa chọn món
+              ăn, đơn giá thực đơn, các công việc cần phải chuẩn bị để tổ chức một bữa tiệc. (Tại nhà
+              riêng, cơ quan, tiệc hội nghị, tiệc cưới...)
+            </li>
+            <li>Khách hàng có thể Đặt tiệc trực tuyến, hoặc in bản thông tin đặt tiệc để có thể thực hiện
+              việc Đặt tiệc qua fax sau khi thực hiện ba bước của quy trình đặt tiệc. Chúng tôi sẽ nhận
+              được ngay các thông tin đặt tiệc trong giờ hành chính hoặc đầu giờ làm việc của ngày tiếp
+              theo đối với những khách hàng đặt tiệc vào buổi tối hoặc chủ nhật hàng tuần.
+            </li>
+            <li>Khi nhận được yêu cầu đặt tiệc của khách hàng, nhân viên văn phòng của công ty sẽ liên hệ
+              qua điện thoại và tiến hành thảo luận cho việc hợp đồng chính thức với khách hàng.
+            </li>
+            <li>Trong trường hợp không nhận được sự xác nhận của Công ty Nguyên Đình, có thể thông tin của
+              Quý khách chưa đầy đủ hoặc chúng tôi chưa nhận được, xin vui lòng liên hệ lại.
+          </ul>
+          </li>
+        </mj-text>
+
+        <mj-text mj-class="gray">
+          Trách nhiệm của nhà cung cấp dịch vụ (Công ty TNHH ăn uống và tổ chức sự kiện Nguyên Đình)
+        </mj-text>
+        <mj-text>
+          <ul>
+            <li>Khi khách hàng đặt tiệc, công ty Nguyên Đình có trách nhiệm cung cấp các món ăn theo thực
+              đơn đã chọn, chế biến ngon, đẹp, đầy đặn phục vụ nóng, đúng thời gian.
+            </li>
+            <li>Cung cấp các dụng cụ phục vụ tiệc phù hợp với tính chất từng buổi tiệc: bát đĩa, ly cốc,
+              khăn trải bàn, khăn ướt, giấy ăn, tăm đũa... ; dao dĩa ăn nồi hâm nóng buffet, váy quây bàn,
+              phủ ghế nơ, trang trí bàn tiệc đối với tiệc đứng (Buffet).
+            </li>
+            <li>Nhân viên phục vụ đồng phục, sang trọng, lịch sự, phục vụ chuyên nghiệp.
+            </li>
+            <li>Thực hiện các chương trình khuyến mại theo quy định chung của công ty và các thỏa thuận với
+              khách hàng.
+            </li>
+          </ul>
+        </mj-text>
+        <mj-text mj-class="gray">
+          Trách nhiệm của người sử dụng dịch vụ (Khách hàng)
+        </mj-text>
+        <mj-text>
+          <ul>
+            <li>
+              Cung cấp, bàn ghế, địa điểm phục vụ tiệc, địa điểm chế biến nóng, điện nước trong quá trình
+              phục vụ và dọn dẹp (trường hợp phục vụ tại địa điểm của khách hàng).
+            </li>
+            <li>
+              Thanh toán các khoản chi phí khác nếu khách hàng sử dụng dịch vụ của Nguyên Đình: Thuê bàn
+              ghế, ly cốc và phục vụ đồ uống (Đồ uống của khách hàng), trang trí và các chương trình tổ
+              chức khác theo yêu cầu.
+            </li>
+          </ul>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section>
+      <mj-column>
+        <mj-text font-weight="700">Công ty TNHH ăn uống và tổ chức sự kiện Nguyên Đình</mj-text>
+      </mj-column>
+      <mj-column>
+        <mj-text font-weight="700">Xác nhận của khách hàng</mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
