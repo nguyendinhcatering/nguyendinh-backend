@@ -26,7 +26,8 @@ const sendViaNodemailer = async (payload) => {
 
   return await transporter.sendMail({
     from: payload.from,
-    to: [payload.to, payload.cc].join(' '),
+    to: payload.to,
+    cc: payload.cc,
     subject: payload.subject,
     html,
   });
